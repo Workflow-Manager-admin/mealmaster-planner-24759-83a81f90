@@ -72,3 +72,43 @@ ERROR in ./src/App.js 10:0-51
 Module not found: Error: Can't resolve './components/GroceryList' in '/home/kavia/workspace/code-generation/mealmaster-planner-24759-83a81f90/mealplanner_app/src'
 
 webpack compiled with 4 errors
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/mealmaster-planner-24759-83a81f90/mealplanner_app/src'
+ERROR in ./src/App.js 6:0-90
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/mealmaster-planner-24759-83a81f90/mealplanner_app/src'
+
+ERROR in ./src/App.js 9:0-53
+Module not found: Error: Can't resolve './components/MealCalendar' in '/home/kavia/workspace/code-generation/mealmaster-planner-24759-83a81f90/mealplanner_app/src'
+
+ERROR in ./src/App.js 10:0-51
+Module not found: Error: Can't resolve './components/GroceryList' in '/home/kavia/workspace/code-generation/mealmaster-planner-24759-83a81f90/mealplanner_app/src'
+
+webpack compiled with 3 errors
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/mealmaster-planner-24759-83a81f90/mealplanner_app/src'
+ERROR in ./src/App.js 6:0-90
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/mealmaster-planner-24759-83a81f90/mealplanner_app/src'
+
+ERROR in ./src/App.js 9:0-53
+Module not found: Error: Can't resolve './components/MealCalendar' in '/home/kavia/workspace/code-generation/mealmaster-planner-24759-83a81f90/mealplanner_app/src'
+
+ERROR in ./src/App.js 10:0-51
+Module not found: Error: Can't resolve './components/GroceryList' in '/home/kavia/workspace/code-generation/mealmaster-planner-24759-83a81f90/mealplanner_app/src'
+
+webpack compiled with 3 errors
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/mealmaster-planner-24759-83a81f90/mealplanner_app/src'
+ERROR in ./src/App.js 6:0-90
+Module not found: Error: Can't resolve 'react-router-dom' in '/home/kavia/workspace/code-generation/mealmaster-planner-24759-83a81f90/mealplanner_app/src'
+
+ERROR in ./src/App.js 10:0-51
+Module not found: Error: Can't resolve './components/GroceryList' in '/home/kavia/workspace/code-generation/mealmaster-planner-24759-83a81f90/mealplanner_app/src'
+
+webpack compiled with 2 errors
+Compiling...
