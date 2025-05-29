@@ -4,6 +4,11 @@
   --text-color: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
   --border-color: rgba(255, 255, 255, 0.1);
+
+  /* Theme override for NavBar */
+  --primary: #4CAF50;
+  --secondary: #FFFFFF;
+  --accent: #FF9800;
 }
 
 body {
