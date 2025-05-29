@@ -1,12 +1,15 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 // PUBLIC_INTERFACE
 /**
  * NavBar - Top navigation bar for MealMaster Planner.
  * Displays navigation links styled with theme colors, highlights active route, and leaves space for auth/buttons.
+ *
+ * Refactored: Use NavLink for all nav routes with correct paths and "end" prop only for root dashboard. Ensures active styling for Dashboard only on "/" exactly.
  */
 function NavBar() {
+  const location = useLocation();
   return (
     <nav className="navbar">
       <div className="container nav-container">
@@ -20,6 +23,7 @@ function NavBar() {
             className={({ isActive }) =>
               "nav-link" + (isActive ? " active" : "")
             }
+            aria-current={location.pathname === "/" ? "page" : undefined}
           >
             Dashboard
           </NavLink>
@@ -28,6 +32,7 @@ function NavBar() {
             className={({ isActive }) =>
               "nav-link" + (isActive ? " active" : "")
             }
+            aria-current={location.pathname === "/recipes" ? "page" : undefined}
           >
             Recipes
           </NavLink>
@@ -36,6 +41,7 @@ function NavBar() {
             className={({ isActive }) =>
               "nav-link" + (isActive ? " active" : "")
             }
+            aria-current={location.pathname === "/calendar" ? "page" : undefined}
           >
             Calendar
           </NavLink>
@@ -44,6 +50,7 @@ function NavBar() {
             className={({ isActive }) =>
               "nav-link" + (isActive ? " active" : "")
             }
+            aria-current={location.pathname === "/grocery-list" ? "page" : undefined}
           >
             Grocery List
           </NavLink>
