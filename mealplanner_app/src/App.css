@@ -111,3 +111,56 @@ body {
   padding: 12px 24px;
   font-size: 1.1rem;
 }
+
+/* NavBar link styles */
+.nav-links {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.nav-link {
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--primary);
+  background: var(--secondary);
+  text-decoration: none;
+  outline: none;
+  border: none;
+  transition: 
+    color 0.2s, 
+    background 0.2s,
+    box-shadow 0.2s;
+  margin: 0 2px;
+  box-shadow: none;
+  position: relative;
+  display: inline-block;
+}
+.nav-link:hover,
+.nav-link:focus {
+  background: var(--accent);
+  color: var(--secondary);
+  box-shadow: 0 1px 8px rgba(76,175,80, 0.22);
+}
+
+.nav-link.active {
+  background: var(--primary);
+  color: var(--secondary);
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(255,152,0,0.10);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-auth-placeholder {
+  min-width: 48px;
+  min-height: 32px;
+}
+
