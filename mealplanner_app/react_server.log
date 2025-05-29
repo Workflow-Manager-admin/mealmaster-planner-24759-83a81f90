@@ -18,3 +18,11 @@ Note that the development build is not optimized.
 To create a production build, use npm run build.
 
 webpack compiled successfully
+Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve './NavBar.css' in '/home/kavia/workspace/code-generation/mealmaster-planner-24759-83a81f90/mealplanner_app/src/components'
+ERROR in ./src/components/NavBar.js 6:0-22
+Module not found: Error: Can't resolve './NavBar.css' in '/home/kavia/workspace/code-generation/mealmaster-planner-24759-83a81f90/mealplanner_app/src/components'
+
+webpack compiled with 1 error
