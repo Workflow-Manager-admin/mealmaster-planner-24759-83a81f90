@@ -330,4 +330,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboagroc
+export default Dashboard;
