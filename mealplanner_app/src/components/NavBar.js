@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./NavBar.css"; // Optional for component-scoped overrides; main styles in App.css
 
 // PUBLIC_INTERFACE
 /**

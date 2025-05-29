@@ -42,3 +42,6 @@ ERROR in ./src/components/NavBar.js 6:0-22
 Module not found: Error: Can't resolve './NavBar.css' in '/home/kavia/workspace/code-generation/mealmaster-planner-24759-83a81f90/mealplanner_app/src/components'
 
 webpack compiled with 1 error
+Compiling...
+Compiled successfully!
+webpack compiled successfully
