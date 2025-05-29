@@ -357,64 +357,181 @@ function GroceryList() {
       </div>
 
       {/* Meal plan viewer/editor */}
-      <div style={{
-        background: sectionBg, border: `1px solid ${borderColor}`, borderRadius: 11,
-        marginBottom: 24, boxShadow: "0 2px 12px rgba(33,50,30,0.07)",
-        overflowX: "auto", maxWidth: 900
-      }}>
-        <div style={{ padding: "8px 10px" }}>
-          <div style={{ fontWeight: 600, color: "var(--primary)", fontSize: ".97rem", marginBottom: 4 }}>
+      <div
+        style={{
+          background: sectionBg,
+          border: `1px solid ${borderColor}`,
+          borderRadius: 11,
+          marginBottom: 24,
+          boxShadow: "0 2px 12px rgba(33,50,30,0.07)",
+          overflowX: "auto",
+          width: "100%",
+          maxWidth: 900,
+          minWidth: 0,
+        }}
+      >
+        <div
+          style={{
+            padding: "8px 10px",
+            width: "100%",
+            boxSizing: "border-box",
+          }}
+        >
+          <div
+            style={{
+              fontWeight: 600,
+              color: "var(--primary)",
+              fontSize: ".99rem",
+              marginBottom: 4,
+              position: "sticky",
+              top: 0,
+              background: sectionBg,
+              zIndex: 1,
+              padding: "4px 0 4px 0",
+            }}
+          >
             Edit Meals for This Plan
           </div>
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: `50px ${weekDays.map(() => "1fr").join(" ")}`,
-            gap: 0,
-            alignItems: "center"
-          }}>
-            <div />
-            {weekDays.map(day =>
-              <div key={day} style={{ color: 'var(--kavia-orange)', fontWeight: 700, textAlign: 'center', fontSize: ".99rem" }}>{day}</div>
-            )}
-            {mealTypes.map(meal => (
-              <React.Fragment key={meal}>
-                <div style={{ color: "var(--accent)", fontWeight: 500, textAlign: "right", fontSize: ".96rem", paddingRight: 3 }}>{meal}</div>
-                {weekDays.map(day => {
-                  const rid = editablePlan[day][meal];
-                  return (
-                    <div key={day + '-' + meal} style={{ textAlign: 'center', height: 36, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      {rid ?
-                        <span style={{ color: "var(--primary)", fontWeight: 500 }}>
-                          {getRecipeTitle(rid)}
-                          <button
-                            className="btn"
-                            style={{ background: 'var(--accent)', color: '#fff', padding: '0 8px', fontSize: ".95rem", marginLeft: 4 }}
-                            onClick={() => handleClearMeal(day, meal)}
-                            tabIndex={0}
-                            aria-label="Clear meal"
-                          >×</button>
-                        </span>
-                        :
-                        <select
-                          value=""
-                          style={{
-                            background: "var(--kavia-dark)", color: "var(--primary)", border: `1px solid ${kaviaAccent}`,
-                            borderRadius: 6, fontWeight: 500, fontSize: '.93rem', padding: "4px 8px", minWidth: 80
-                          }}
-                          onChange={e => handleAssignMeal(day, meal, Number(e.target.value))}
-                          aria-label={`Assign recipe to ${day} - ${meal}`}
-                        >
-                          <option value="">+ Add</option>
-                          {mockRecipes.map(r => (
-                            <option value={r.id} key={r.id}>{r.title}</option>
-                          ))}
-                        </select>
-                      }
-                    </div>
-                  );
-                })}
-              </React.Fragment>
-            ))}
+          <div
+            style={{
+              width: "100%",
+              overflowX: "auto",
+              WebkitOverflowScrolling: "touch",
+            }}
+          >
+            <div
+              style={{
+                display: "grid",
+                minWidth: 655, // fits one column per day on smallest screen
+                gridTemplateColumns: `50px ${weekDays
+                  .map(() => "1fr")
+                  .join(" ")}`,
+                gap: 0,
+                alignItems: "center",
+              }}
+            >
+              <div />
+              {weekDays.map((day) => (
+                <div
+                  key={day}
+                  style={{
+                    color: "var(--kavia-orange)",
+                    fontWeight: 700,
+                    textAlign: "center",
+                    fontSize: ".99rem",
+                    wordBreak: "break-word",
+                  }}
+                >
+                  {day}
+                </div>
+              ))}
+              {mealTypes.map((meal) => (
+                <React.Fragment key={meal}>
+                  <div
+                    style={{
+                      color: "var(--accent)",
+                      fontWeight: 500,
+                      textAlign: "right",
+                      fontSize: ".96rem",
+                      paddingRight: 3,
+                      minWidth: 44,
+                    }}
+                  >
+                    {meal}
+                  </div>
+                  {weekDays.map((day) => {
+                    const rid = editablePlan[day][meal];
+                    return (
+                      <div
+                        key={day + "-" + meal}
+                        style={{
+                          textAlign: "center",
+                          minHeight: 38,
+                          height: "auto",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          padding: "2px 0",
+                          wordBreak: "break-word",
+                        }}
+                      >
+                        {rid ? (
+                          <span
+                            style={{
+                              color: "var(--primary)",
+                              fontWeight: 500,
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              gap: 2,
+                              flexWrap: "wrap",
+                              maxWidth: 100,
+                            }}
+                          >
+                            <span style={{ overflow: "hidden", textOverflow: "ellipsis", maxWidth: 74, display: "inline-block", whiteSpace: "nowrap" }}>
+                              {getRecipeTitle(rid)}
+                            </span>
+                            <button
+                              className="btn"
+                              style={{
+                                background: "var(--accent)",
+                                color: "#fff",
+                                padding: "0 8px",
+                                fontSize: ".95rem",
+                                marginLeft: 3,
+                                lineHeight: 1.4,
+                                height: 28,
+                                minWidth: 28,
+                                display: "inline-flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                              }}
+                              onClick={() => handleClearMeal(day, meal)}
+                              tabIndex={0}
+                              aria-label="Clear meal"
+                            >
+                              ×
+                            </button>
+                          </span>
+                        ) : (
+                          <select
+                            value=""
+                            style={{
+                              background: "var(--kavia-dark)",
+                              color: "var(--primary)",
+                              border: `1px solid ${kaviaAccent}`,
+                              borderRadius: 6,
+                              fontWeight: 500,
+                              fontSize: ".93rem",
+                              padding: "4px 8px",
+                              minWidth: 80,
+                              width: "90%",
+                              maxWidth: 130,
+                              margin: "0 2px",
+                            }}
+                            onChange={(e) =>
+                              handleAssignMeal(
+                                day,
+                                meal,
+                                Number(e.target.value)
+                              )
+                            }
+                            aria-label={`Assign recipe to ${day} - ${meal}`}
+                          >
+                            <option value="">+ Add</option>
+                            {mockRecipes.map((r) => (
+                              <option value={r.id} key={r.id}>
+                                {r.title}
+                              </option>
+                            ))}
+                          </select>
+                        )}
+                      </div>
+                    );
+                  })}
+                </React.Fragment>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -158,9 +158,33 @@ body {
   align-items: center;
   width: 100%;
 }
-
 .nav-auth-placeholder {
   min-width: 48px;
   min-height: 32px;
+}
+
+
+/* ----------- Responsive fixes for GroceryList meal grid ----------- */
+@media (max-width: 710px) {
+  .container {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  .grocery-edit-grid {
+    min-width: 600px !important;
+    font-size: 0.93rem;
+  }
+}
+
+/* Make action/plan bar wrap (for buttons above the plan grid) */
+@media (max-width: 610px) {
+  .grocery-plan-bar {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+  .grocery-plan-bar > * {
+    min-width: 108px !important;
+    margin-bottom: 5px !important;
+  }
 }
 
