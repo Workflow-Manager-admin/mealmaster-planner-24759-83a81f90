@@ -200,23 +200,30 @@ function GroceryList() {
   const categorizedList = useMemo(() => groupByCategory(groceryList), [groceryList]);
 
   // ============= CHECK-OFF / REMOVAL STATE =============
+  // Store checked/removed map in useState, but key state should persist per-groceryList content.
   const [checkedMap, setCheckedMap] = useState({});
-  const [removedMap, setRemovedMap] = useState({}); // key: name|cat
+  const [removedMap, setRemovedMap] = useState({});
 
-  // Reset check/removed when groceryList changes
+  // Reset check/removed if groceryList changes identity
   React.useEffect(() => {
     setCheckedMap({});
     setRemovedMap({});
-  }, [groceryList]);
+    // eslint-disable-next-line
+  }, [JSON.stringify(groceryList)]);
 
+  // PUBLIC_INTERFACE
+  /** Toggle check-off for given ingredient item key (name|category) */
   function handleToggleChecked(key) {
     setCheckedMap(prev => ({ ...prev, [key]: !prev[key] }));
   }
+  // PUBLIC_INTERFACE
+  /** Mark an item as removed by key (name|category) */
   function handleRemoveItem(key) {
     setRemovedMap(prev => ({ ...prev, [key]: true }));
   }
+  // PUBLIC_INTERFACE
+  /** Regenerate grocery list - resets checked and removed state */
   function handleRegenerate() {
-    // Wipes checked/removed status (handle by effect)
     setCheckedMap({});
     setRemovedMap({});
   }
